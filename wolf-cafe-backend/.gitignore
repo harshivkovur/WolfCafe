@@ -1,0 +1,5 @@
+/target/
+
+/src/test/resources/application.properties
+/src/main/resources/application.properties
+/.settings/

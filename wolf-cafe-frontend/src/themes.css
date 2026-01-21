@@ -1,0 +1,712 @@
+/* ------------------------- Base / Global ------------------------- */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: all 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ------------------------- Dark Theme ------------------------- */
+.theme-dark {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.theme-dark .navbar {
+  background-color: #333333; /* Dark gray navbar */
+}
+
+.theme-dark .navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.theme-dark .navbar-brand:hover {
+  color: #cc0000;
+}
+
+/* Nav links */
+.theme-dark a.nav-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.theme-dark a.nav-link.active,
+.theme-dark a.nav-link.active:hover {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.theme-dark a.nav-link:hover {
+  color: #cc0000;
+  font-weight: normal;
+}
+
+/* Logout links */
+.theme-dark .logout-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+.theme-dark .logout-link:hover {
+  color: #cc0000;
+  font-weight: normal;
+}
+
+.theme-dark button {
+  background-color: #3a3a3a;
+  color: #fff;
+  border: 1px solid #666;
+  font-weight: 500;
+}
+
+.theme-dark button:hover {
+  background-color: #aa0000 !important;
+  color: #ffffff !important;
+  border-color: #cc0000 !important;
+}
+
+.theme-dark .theme-error {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+.theme-dark .modal-content,
+.theme-dark .theme-modal-content {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border-color: #cc0000;
+}
+
+.theme-dark table {
+  color: #ffffff;
+  border: 1px solid #444444;
+  border-collapse: collapse;
+}
+
+.theme-dark table th {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border-top: 1px solid #444444;
+  border-left: 1px solid #444444;
+  border-right: 1px solid #444444;
+  border-bottom: 2px solid #cc0000; /* thick bottom border for emphasis */
+  font-weight: 600;
+}
+
+.theme-dark table td {
+  background-color: #262626;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+.theme-dark table tr:nth-child(even) td {
+  background-color: #2a2a2a;
+}
+
+
+.theme-dark .card,
+.theme-dark .inventory-card,
+.theme-dark .tax-card {
+  background-color: #2b2b2b;
+  border: 1px solid #cc0000; /* reduced border thickness */
+  color: #ffffff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 1.25rem;
+}
+
+.theme-dark .card-header,
+.theme-dark .inventory-card-header,
+.theme-dark .tax-card-header {
+  border-bottom: 1px solid #cc0000;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.theme-dark .form-input {
+  background-color: #1f1f1f;
+  border: 1px solid #555;
+  color: #ffffff;
+}
+
+.theme-dark .form-input:focus {
+  border-color: #cc0000;
+  outline: none;
+}
+
+/* ------------------------- Light Theme ------------------------- */
+.theme-light {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+.theme-light .navbar {
+  background-color: #333333; /* Dark gray navbar */
+}
+
+.theme-light .navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.theme-light .navbar-brand:hover {
+  color: #cc0000;
+}
+
+/* Nav links */
+.theme-light a.nav-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.theme-light a.nav-link.active,
+.theme-light a.nav-link.active:hover {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.theme-light a.nav-link:hover {
+  color: #cc0000;
+  font-weight: normal;
+}
+
+/* Logout links */
+.theme-light .logout-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+.theme-light .logout-link:hover {
+  color: #cc0000;
+  font-weight: normal;
+}
+
+.theme-light button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #c0c0c0;
+  font-weight: 500;
+}
+
+.theme-light button:hover {
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
+  border-color: #cc0000 !important;
+}
+
+.theme-light .theme-error {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+.theme-light .modal-content,
+.theme-light .theme-modal-content {
+  background-color: #ffffff;
+  color: #213547;
+  border-color: #cc0000;
+}
+
+.theme-light table {
+  color: #213547;
+  border: 1px solid #cccccc;
+  border-collapse: collapse;
+}
+
+.theme-light table th {
+  background-color: #f0f0f0;
+  color: #333333;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 2px solid #cc0000; /* thick bottom border for emphasis */
+  font-weight: 600;
+}
+
+.theme-light table td {
+  background-color: #ffffff;
+  color: #213547;
+  border: 1px solid #cccccc;
+}
+
+.theme-light table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.theme-light .card,
+.theme-light .inventory-card,
+.theme-light .tax-card {
+  background-color: #ffffff;
+  border: 1px solid #cc0000; /* reduced border thickness */
+  color: #213547;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 1.25rem;
+}
+
+.theme-light .card-header,
+.theme-light .inventory-card-header,
+.theme-light .tax-card-header {
+  border-bottom: 1px solid #cc0000;
+  color: #213547;
+  font-weight: 600;
+  text-align: center;
+  background-color: transparent !important; /* forces consistency */
+}
+
+.theme-light .form-input {
+  background-color: #f9f9f9;
+  border: 1px solid #cccccc;
+  color: #213547;
+}
+
+.theme-light .form-input:focus {
+  border-color: #cc0000;
+  outline: none;
+}
+
+/* ------------------------- School Spirit Theme ------------------------- */
+.theme-ncstate,
+.theme-schoolspirit {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.theme-ncstate .navbar,
+.theme-schoolspirit .navbar {
+  background-color: #cc0000;
+}
+
+.theme-ncstate .navbar-brand,
+.theme-schoolspirit .navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.theme-ncstate .navbar-brand:hover,
+.theme-schoolspirit .navbar-brand:hover {
+  color: #333333;
+}
+
+/* Nav links */
+.theme-ncstate a.nav-link,
+.theme-schoolspirit a.nav-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.theme-ncstate a.nav-link.active,
+.theme-schoolspirit a.nav-link.active {
+  color: #000000;
+  font-weight: bold;
+}
+
+.theme-ncstate a.nav-link.active:hover,
+.theme-schoolspirit a.nav-link.active:hover {
+  color: #000000;
+  font-weight: bold;
+}
+
+.theme-ncstate a.nav-link:hover,
+.theme-schoolspirit a.nav-link:hover {
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Logout link */
+.theme-ncstate .logout-link,
+.theme-schoolspirit .logout-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.theme-ncstate .logout-link:hover,
+.theme-schoolspirit .logout-link:hover {
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Buttons / Logout */
+.theme-ncstate button,
+.theme-schoolspirit button,
+.theme-ncstate .btn,
+.theme-schoolspirit .btn {
+  background-color: #ffffff !important; /* white base */
+  color: #cc0000 !important;           /* NCSU red text */
+  border: 1px solid #cc0000 !important; /* NCSU red border */
+  box-shadow: none !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.theme-ncstate button:hover,
+.theme-schoolspirit button:hover,
+.theme-ncstate .btn:hover,
+.theme-schoolspirit .btn:hover {
+  background-color: #000000 !important; /* black hover background */
+  color: #ffffff !important;            /* white text on hover */
+  border-color: #cc0000 !important;     /* keep original red border */
+}
+
+.theme-ncstate .theme-error,
+.theme-schoolspirit .theme-error {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+.theme-ncstate .modal-content,
+.theme-schoolspirit .modal-content,
+.theme-ncstate .theme-modal-content,
+.theme-schoolspirit .theme-modal-content {
+  background-color: #ffffff;
+  color: #cc0000;
+  border: 1px solid #cc0000;
+}
+
+.theme-ncstate table,
+.theme-schoolspirit table {
+  color: #333333;
+  border: 1px solid #cc0000;
+  border-collapse: collapse;
+}
+
+.theme-ncstate table th,
+.theme-schoolspirit table th {
+  background-color: #cc0000;
+  color: #ffffff;
+  border-top: 1px solid #cc0000;
+  border-left: 1px solid #cc0000;
+  border-right: 1px solid #cc0000;
+  border-bottom: 2px solid #000000; /* thick bottom for emphasis */
+  font-weight: 600;
+}
+
+.theme-ncstate table td,
+.theme-schoolspirit table td {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #cc0000;
+}
+
+.theme-ncstate table tr:nth-child(even) td,
+.theme-schoolspirit table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.theme-ncstate .card,
+.theme-schoolspirit .card,
+.theme-ncstate .inventory-card,
+.theme-schoolspirit .inventory-card,
+.theme-ncstate .tax-card,
+.theme-schoolspirit .tax-card {
+  background-color: #ffffff;
+  border-color: #cc0000;
+  color: #333333;
+  text-align: center;
+}
+
+.theme-ncstate .card-header,
+.theme-schoolspirit .card-header,
+.theme-ncstate .inventory-card-header,
+.theme-schoolspirit .inventory-card-header,
+.theme-ncstate .tax-card-header,
+.theme-schoolspirit .tax-card-header {
+  border-bottom-color: #cc0000;
+  color: #cc0000;
+  text-align: center;
+  background-color: transparent !important; /* forces consistency */
+}
+
+.theme-ncstate .form-input,
+.theme-schoolspirit .form-input {
+  background-color: #ffffff;
+  border-color: #cc0000;
+  color: #333333;
+}
+
+.theme-ncstate .form-input:focus,
+.theme-schoolspirit .form-input:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+/* -----------------------------------------------------------
+   VAPORWAVE THEME (Light Base, Purple Cards, Cyan Navbar, Better Contrast)
+----------------------------------------------------------- */
+.theme-vaporwave {
+  background-color: #fcfcff; /* Soft near-white base */
+  color: #333333;
+}
+
+.theme-vaporwave .navbar {
+  background-color: #25bfff; /* Cyan navbar */
+}
+
+.theme-vaporwave .navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.theme-vaporwave .navbar-brand.active,
+.theme-vaporwave .navbar-brand:hover {
+  color: #5d2b8a; /* Dark purple for active/hover brand */
+}
+
+/* Nav links */
+.theme-vaporwave a.nav-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.theme-vaporwave a.nav-link.active,
+.theme-vaporwave a.nav-link.active:hover {
+  color: #5d2b8a; /* Dark purple for active link */
+  font-weight: bold;
+}
+
+.theme-vaporwave a.nav-link:hover:not(.active) {
+  color: #5d2b8a; /* Dark purple hover for inactive links */
+  font-weight: normal;
+}
+
+/* Logout links */
+.theme-vaporwave .logout-link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.theme-vaporwave .logout-link:hover {
+  color: #5d2b8a;
+  font-weight: normal;
+}
+
+/* Buttons (color invert on hover) */
+.theme-vaporwave button,
+.theme-vaporwave .btn {
+  background-color: #5d2b8a; /* Dark purple neutral */
+  color: #ffffff;
+  border: 2px solid #5d2b8a; /* Dark purple border matches background */
+  font-weight: 500;
+}
+
+.theme-vaporwave button:hover,
+.theme-vaporwave .btn:hover {
+  background-color: #25bfff; /* Cyan background on hover */
+  border-color: #5d2b8a; /* Dark purple border on hover */
+  color: #ffffff !important;
+}
+
+/* Error messages */
+.theme-vaporwave .theme-error {
+  background-color: #8a6cff;
+  color: #ffffff;
+}
+
+/* Modal content */
+.theme-vaporwave .modal-content,
+.theme-vaporwave .theme-modal-content {
+  background-color: #ffffff;
+  color: #333333;
+  border: 2px solid #b399ff;
+  text-align: center;
+}
+
+.theme-vaporwave table {
+  color: #333333;
+  border: 1px solid #8ac6ff;
+  border-collapse: collapse;
+}
+
+.theme-vaporwave table th {
+  background-color: #b399ff;
+  color: #2b1a5e;
+  border-top: 1px solid #8ac6ff;
+  border-left: 1px solid #8ac6ff;
+  border-right: 1px solid #8ac6ff;
+  border-bottom: 2px solid #5d2b8a; /* thick bottom for emphasis */
+  font-weight: 600;
+}
+
+.theme-vaporwave table td {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #8ac6ff;
+}
+
+.theme-vaporwave table tr:nth-child(even) td {
+  background-color: #f4f4ff;
+}
+
+.theme-vaporwave .card,
+.theme-vaporwave .inventory-card,
+.theme-vaporwave .tax-card {
+  background-color: #b399ff; /* unified light purple */
+  border: 1px solid #5d2b8a; /* dark purple border */
+  color: #2b1a5e;            /* dark purple text */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  padding: 1.25rem;
+}
+
+/* Headers MUST NOT have a background-color */
+.theme-vaporwave .card-header,
+.theme-vaporwave .inventory-card-header,
+.theme-vaporwave .tax-card-header {
+  border-bottom: 1px solid #5d2b8a;
+  color: #2b1a5e;
+  text-align: center;
+  background-color: transparent !important; /* forces consistency */
+}
+
+/* Form inputs */
+.theme-vaporwave .form-input {
+  background-color: #ffffff;
+  border: 1px solid #8ac6ff;
+  color: #333333;
+}
+
+.theme-vaporwave .form-input:focus {
+  border-color: #b399ff;
+  outline: none;
+}
+
+/* ------------------------- Utility / Smooth Transition ------------------------- */
+*, *::before, *::after {
+  transition: all 0.4s ease;
+}
+
+/* Modals general styling */
+.theme-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.theme-modal-content,
+.modal-content {
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 360px;
+  max-width: 92vw;
+  text-align: center;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+
+.theme-modal-actions,
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0 !important;
+}
+
+.theme-modal-actions button,
+.modal-footer .btn {
+  flex: 1;
+  padding: 0.75em 1.1em;
+  font-size: 1rem;
+  min-width: 80px;
+}
+
+.modal-header,
+.theme-modal-content > .modal-header {
+  border-bottom: none;
+  padding-bottom: 0.25rem;
+}
+
+.modal-body { padding-top: 0; }
+
+/* ---------- CARD STRUCTURE & FORM CONTROLS ---------- */
+.card,
+.inventory-card,
+.tax-card {
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  text-align: center;
+}
+
+.card-header,
+.inventory-card-header,
+.tax-card-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid transparent;
+  text-align: center;
+}
+
+.card-body,
+.inventory-card-body,
+.tax-card-body {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.form-label {
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: inherit;
+  color: inherit;
+}
